@@ -13,7 +13,39 @@ Running from source
 The Crazyflie client requires [cflib](https://github.com/bitcraze/crazyflie-lib-python).
 If you want to develop with the lib too, follow the cflib readme to install it.
 
-## Windows (7/8/10)
+## Windows (7/8/10) using Python>=3.5
+
+The client was tested on Python 3.6 64Bits as well. 
+
+Open a command line windows and move to the crazyflie clients folder (the exact command depends of where the project is cloned):
+```
+cd crazyflie-clients-python
+```
+
+Download the 32bits SDL2.dll windows library:
+```
+python tools\build\prep_windows
+```
+
+Install the client in development mode:
+```
+pip install -e .[dev]
+```
+
+Install pyqt5:
+```
+pip install pyqt5
+```
+
+You can now run the clients with the following commands:
+```
+cfclient
+cfheadless
+cfloader
+cfzmq
+```
+
+## Windows (7/8/10) using Miniconda
 
 Running from source on Windows is tested using the [miniconda](http://conda.pydata.org/miniconda.html) python distribution. It is possible to run from any distribution as long as the required packages are installed. Building the windows installer requires Python 3.4 (because ```py2exe``` is not distributed for Python 3.5+ yet). The following instructions assumes **Miniconda 32-bit** is installed.
 
