@@ -50,12 +50,12 @@ from cfclient.ui.tab import Tab
 LOG_NAME_ESTIMATED_Z = "stateEstimate.z"
 
 __author__ = 'Bitcraze AB'
-__all__ = ['ExampleTab']
+__all__ = ['SwarmTab']
 
 logger = logging.getLogger(__name__)
 
 example_tab_class = uic.loadUiType(cfclient.module_path +
-                                  "/ui/tabs/exampleTab.ui")[0]
+                                  "/ui/tabs/swarmTab.ui")[0]
 
 MAX_THRUST = 65536.0
 
@@ -122,8 +122,8 @@ class LogConfigModel(QAbstractItemModel):
         return self._nodes[i]
 
 
-class ExampleTab(Tab, example_tab_class):
-    #uiSetupReadySignal = pyqtSignal()
+class SwarmTab(Tab, example_tab_class):
+    uiSetupReadySignal = pyqtSignal()
 
     _motor_data_signal = pyqtSignal(int, object, object)
     _imu_data_signal = pyqtSignal(int, object, object)
@@ -163,11 +163,11 @@ class ExampleTab(Tab, example_tab_class):
     _limiting_updated = pyqtSignal(bool, bool, bool)
 
     def __init__(self, tabWidget, helper, *args):
-        super(ExampleTab, self).__init__(*args)
+        super(SwarmTab, self).__init__(*args)
         self.setupUi(self)
 
-        self.tabName = "SUTD AFC3D"
-        self.menuName = "SUTD AFC3D"
+        self.tabName = "Swarm"
+        self.menuName = "Swarm"
 
         self.tabWidget = tabWidget
         self.helper = helper
@@ -257,7 +257,7 @@ class ExampleTab(Tab, example_tab_class):
         self.k3Combo.valueChanged.connect(self._k123_gain_changed)
         # self.maxAngle.valueChanged.connect(self.maxAngleChanged)
         # self.maxYawRate.valueChanged.connect(self.maxYawRateChanged)
-        #self.uiSetupReadySignal.connect(self.uiSetupReady)
+        self.uiSetupReadySignal.connect(self.uiSetupReady)
         self.clientXModeCheckbox.toggled.connect(self.changeXmode)
         self.isInCrazyFlightmode = False
         self.uiSetupReady()

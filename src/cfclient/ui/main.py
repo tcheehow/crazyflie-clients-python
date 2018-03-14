@@ -250,8 +250,17 @@ class MainUI(QtWidgets.QMainWindow, main_window_class):
         self.joystickReader.heighthold_input_updated.add_callback(
             self.cf.commander.send_zdistance_setpoint)
 
+        #original hover update code from the joystick
+        #self.joystickReader.hover_input_updated.add_callback(
+        #    self.cf.commander.send_hover_setpoint)
+
+        # we intercept the callback to our own helper
         self.joystickReader.hover_input_updated.add_callback(
-            self.cf.commander.send_hover_setpoint)
+            cfclient.ui.pluginhelper.send_hover_setpoint)
+
+        # use our own callback to activate the actual hover setpoint
+        cfclient.ui.pluginhelper.hover_input_updated.add_callback(
+           self.cf.commander.send_hover_setpoint)
 
         # Connection callbacks and signal wrappers for UI protection
         self.cf.connected.add_callback(self.connectionDoneSignal.emit)
