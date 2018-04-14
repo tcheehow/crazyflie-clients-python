@@ -22,4 +22,16 @@ msvcp90.dll
 
 # PyCharm
 .idea/*
-.DS_Store
+.
+
+# Miniconda
+venv/*
+
+#QT
+Cfclient.config
+Cfclient.creator
+Cfclient.creator
+Cfclient.creator.user
+Cfclient.files
+Cfclient.includes
+images.qrc

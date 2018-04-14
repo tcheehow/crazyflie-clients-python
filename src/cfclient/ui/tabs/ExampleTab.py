@@ -428,12 +428,12 @@ class ExampleTab(Tab, example_tab_class):
         # Reset Gains
         self.helper.cf.param.set_value("posCtlPid.zKd", str(0.0))
         self.helper.cf.param.set_value("posCtlPid.zKi", str(0.5))
-        self.helper.cf.param.set_value("posCtlPid.zKp", str(40.0))
+        self.helper.cf.param.set_value("posCtlPid.zKp", str(1.0))
         self.k1Combo.setValue(40.0)
         self.helper.cf.param.set_value("posCtlPid.zVelMax", str(15.0))
         self.helper.cf.param.set_value("velCtlPid.vzKd", str(0.0))
         self.helper.cf.param.set_value("velCtlPid.vzKi", str(0.0))
-        self.helper.cf.param.set_value("velCtlPid.vzKp", str(15.0))
+        self.helper.cf.param.set_value("velCtlPid.vzKp", str(1.0))
         self.k2Combo.setValue(15.0)
         self.k3Combo.setValue(0.0)
 

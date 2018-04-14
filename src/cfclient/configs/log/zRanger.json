@@ -1,0 +1,16 @@
+{
+  "logconfig": {
+    "logblock": {
+      "variables": [
+        {
+          "name": "range.zrange",
+          "stored_as": "",
+          "fetch_as": "uint16_t",
+          "type": "TOC"
+        }
+      ],
+      "name": "zRanger",
+      "period": 20
+    }
+  }
+}

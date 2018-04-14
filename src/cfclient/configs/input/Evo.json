@@ -1,0 +1,52 @@
+{
+  "inputconfig": {
+    "inputdevice": {
+      "axis": [
+        {
+          "id": 2,
+          "scale": 1.0,
+          "key": "thrust",
+          "name": "thrust",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 1,
+          "scale": 1.0,
+          "key": "pitch",
+          "name": "pitch",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 0,
+          "scale": 1.0,
+          "key": "roll",
+          "name": "roll",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 3,
+          "scale": 1.0,
+          "key": "yaw",
+          "name": "yaw",
+          "type": "Input.AXIS"
+        },
+        {
+          "id": 0,
+          "scale": 1.0,
+          "key": "assistedControl",
+          "name": "assistedControl",
+          "type": "Input.BUTTON"
+        },
+        {
+          "id": 7,
+          "scale": 1.0,
+          "key": "",
+          "name": "",
+          "type": "Input.BUTTON"
+        }
+      ],
+      "name": "Evo",
+      "updateperiod": 10
+    }
+  }
+}

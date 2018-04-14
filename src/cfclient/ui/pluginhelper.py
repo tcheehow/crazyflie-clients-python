@@ -43,6 +43,7 @@ class PluginHelper():
 
     def __init__(self):
         self.cf = None
+        self.cfs = {}
         self.menu = None
         self.logConfigReader = None
         self.referenceHeight = 0.400
